@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/app.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/config/default/libc_syscalls.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/config/default/interrupts.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/config/default/peripheral/sercom/i2c_master/plib_sercom0_i2c_master.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/config/default/driver/i2c/src/drv_i2c.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/config/default/peripheral/nvmctrl/plib_nvmctrl.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/config/default/tasks.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/main.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/config/default/system/int/src/sys_int.c</file>
+            <file>file:/D:/01%20-%20Microchip/PIC32/P1%20Blink/firmware/src/bme280/bme280.c</file>
+        </group>
+    </open-files>
+</project-private>
