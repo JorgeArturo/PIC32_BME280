@@ -69,6 +69,8 @@ struct identifier
 
 struct identifier id;
 struct bme280_dev dev;
+uint8_t rbuff[10];
+uint8_t wbuff[100];
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -90,22 +92,15 @@ struct bme280_dev dev;
 int8_t user_i2c_read(uint8_t reg_addr, uint8_t *data, uint32_t len, void *intf_ptr){
     
     struct identifier id;
+    wbuff[0] = reg_addr;
 
-    uint8_t wbuff[2] = {reg_addr,0};
-    
     id = *((struct identifier *)intf_ptr);
-     
-    if(DRV_I2C_WriteReadTransfer(appData.i2c_handler,id.dev_addr,&wbuff,1,&data,len)){
     
-        return BME280_OK;
-    
-    }
-    else
-    {
-    
-        return BME280_E_COMM_FAIL;
-    
-    }
+    DRV_I2C_WriteReadTransfer(appData.i2c_handler,id.dev_addr,wbuff,(size_t)1,rbuff,(size_t)len);
+
+    data = rbuff[0];
+
+    return BME280_OK;
 
 }
 int8_t user_i2c_write(uint8_t reg_addr, const uint8_t *data, uint32_t len, void *intf_ptr){
@@ -114,7 +109,7 @@ int8_t user_i2c_write(uint8_t reg_addr, const uint8_t *data, uint32_t len, void 
 
     id = *((struct identifier *)intf_ptr);
     
-    uint8_t wbuff[2] = {reg_addr};
+    wbuff[0] = reg_addr;
     
     if(DRV_I2C_WriteTransfer(appData.i2c_handler,id.dev_addr,&wbuff,(size_t)1))
     {
@@ -263,7 +258,7 @@ void APP_Tasks ( void )
             
             printf("Initializing I2C...");
     
-            appData.i2c_handler = DRV_I2C_Open(DRV_I2C_INDEX_0,DRV_IO_INTENT_READWRITE | DRV_IO_INTENT_BLOCKING | DRV_IO_INTENT_EXCLUSIVE); 
+            appData.i2c_handler = DRV_I2C_Open(DRV_I2C_INDEX_0,DRV_IO_INTENT_READWRITE); 
                     
             if (appData.i2c_handler != DRV_HANDLE_INVALID)
             {
